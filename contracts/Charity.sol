@@ -1,40 +1,46 @@
+// SPDX-License-Identifier: GPL-3.0
+
 pragma solidity >=0.7.0 <0.9.0;
 
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/math/SafeMath.sol";
+import "hardhat/console.sol";
 
 contract Charity {
     
-    address payable public owner;
+    address payable public contractOwner;
     address[] public donators;
     
-    mapping(address => uint) donatorAmounts;
+    mapping(address => uint) public donatorAmounts;
+    mapping (address => uint) public donatorIDs;
 
-    using SafeMath for unit;
-
-    constructor () public {
-        owner = msg.sender;
+    constructor () payable {
+        contractOwner = payable(msg.sender);
     }
+    
+    uint donator_id = 1;
 
-    struct donor {
-        uint donationAmount;
+    modifier ownerOnly {
+      require(msg.sender == contractOwner, "Action resricted to owner only");
+      _;
     }
 
     function receiveDonation() public payable {
-        donators.push(msg.sender);
-        donatorAmounts[msg.sender] = donor(msg.value);
+        if (donatorIDs[msg.sender] != 0){
+            donatorAmounts[msg.sender] += msg.value;
+        } else {
+            donatorIDs[msg.sender] = donator_id;
+            donators.push(msg.sender);
+            donatorAmounts[msg.sender] += msg.value;
+            donator_id++;
+        }
+        console.log("Received a donation");
     }
 
-    function getDonators() public view returns (address[] memory) {
-        return donators;
+    function transferToBeneficiary(address payable beneficiary, uint amount) public ownerOnly {
+        require(amount< address(this).balance, "Not enough balance");
+        beneficiary.transfer(amount);
     }
 
-    function getDonatorSum(address donator) public view returns (uint) {
-        return donatorAmounts[donator].donationAmount;
-    }
-
-    function transferToOwner(uint donationAmount) external {
-        require(msg.sender == owner, "Only owner can transfer donations");
-        require(donationAmount <= address(this).balance, "Not enough balance");
-        owner.transfer(donationAmount);
+    function getBalance() public view returns (uint) {
+        return address(this).balance;
     }
 }
