@@ -1,0 +1,313 @@
+{
+  "version": "3.2",
+  "log": [
+    {
+      "Charity": {
+        "src": "contracts/Charity.sol:7",
+        "version": {
+          "withMetadata": "c190b5d13c7c7697b97535e6e975a1b28a30d5755087f2745a9a168f0cd5a821",
+          "withoutMetadata": "86c8b571fb73556cd803712dc494f16ccefa9030d625d2a2d11c6606a72157cc",
+          "linkedWithoutMetadata": "86c8b571fb73556cd803712dc494f16ccefa9030d625d2a2d11c6606a72157cc"
+        },
+        "inherit": [],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "receiveDonation()",
+          "transferToBeneficiary(address payable,uint256)",
+          "getBalance()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Charity",
+            "src": "contracts/Charity.sol:15"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "donator_id",
+            "src": "contracts/Charity.sol:19"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Charity",
+              "label": "contractOwner",
+              "type": "t_address_payable",
+              "src": "contracts/Charity.sol:9"
+            },
+            {
+              "contract": "Charity",
+              "label": "donators",
+              "type": "t_array(t_address)dyn_storage",
+              "src": "contracts/Charity.sol:10"
+            },
+            {
+              "contract": "Charity",
+              "label": "donatorAmounts",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts/Charity.sol:12"
+            },
+            {
+              "contract": "Charity",
+              "label": "donatorIDs",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts/Charity.sol:13"
+            },
+            {
+              "contract": "Charity",
+              "label": "donator_id",
+              "type": "t_uint256",
+              "src": "contracts/Charity.sol:19"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "ERC20": {
+        "src": "contracts/ERC20.sol:5",
+        "version": {
+          "withMetadata": "e5160568bdbc5258ec018cb8e6b0e61c5ddff02a12649bcb151856351b230f7a",
+          "withoutMetadata": "67ad5316b3ec87cca7d2d71626ce9e0fc7b8b5c1417bf450c97d336247f8a5f8",
+          "linkedWithoutMetadata": "67ad5316b3ec87cca7d2d71626ce9e0fc7b8b5c1417bf450c97d336247f8a5f8"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [
+          "(string,string)",
+          "name()",
+          "symbol()",
+          "decimals()",
+          "totalSupply()",
+          "balanceOf(address)",
+          "allowance(address,address)",
+          "transferFrom(address,address,uint256)",
+          "transfer(address,uint256)",
+          "increaseAllowance(address,uint256)",
+          "decreaseAllowance(address,uint256)",
+          "_mint(address,uint256)",
+          "burn(uint256)"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "ERC20",
+            "src": "contracts/ERC20.sol:20"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "_decimals",
+            "src": "contracts/ERC20.sol:10"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "ERC20",
+              "label": "_name",
+              "type": "t_string_storage",
+              "src": "contracts/ERC20.sol:7"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_symbol",
+              "type": "t_string_storage",
+              "src": "contracts/ERC20.sol:8"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_totalSupply",
+              "type": "t_uint256",
+              "src": "contracts/ERC20.sol:9"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_decimals",
+              "type": "t_uint256",
+              "src": "contracts/ERC20.sol:10"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_minter",
+              "type": "t_address",
+              "src": "contracts/ERC20.sol:11"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_balances",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts/ERC20.sol:13"
+            },
+            {
+              "contract": "ERC20",
+              "label": "_allowances",
+              "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+              "src": "contracts/ERC20.sol:14"
+            }
+          ],
+          "types": {
+            "t_string_storage": {
+              "label": "string"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
+              "label": "mapping(address => mapping(address => uint256))"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "beae05454d6c24b0af2926d3f12cbd62c3db4a4f7dff423bd7ff2ddbe2972f20",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      }
+    },
+    {
+      "Charity": {
+        "src": "contracts/Charity.sol:8",
+        "version": {
+          "withMetadata": "e62ac953c390073809d7d2f6086a2a2d6335273f41fbfdbd28fcfaf766fa7335",
+          "withoutMetadata": "86c8b571fb73556cd803712dc494f16ccefa9030d625d2a2d11c6606a72157cc",
+          "linkedWithoutMetadata": "86c8b571fb73556cd803712dc494f16ccefa9030d625d2a2d11c6606a72157cc"
+        },
+        "inherit": [],
+        "libraries": [
+          "console"
+        ],
+        "methods": [
+          "()",
+          "receiveDonation()",
+          "transferToBeneficiary(address payable,uint256)",
+          "getBalance()"
+        ],
+        "linkReferences": [],
+        "errors": [
+          {
+            "kind": "constructor",
+            "contract": "Charity",
+            "src": "contracts/Charity.sol:16"
+          },
+          {
+            "kind": "state-variable-assignment",
+            "name": "donator_id",
+            "src": "contracts/Charity.sol:20"
+          }
+        ],
+        "layout": {
+          "storage": [
+            {
+              "contract": "Charity",
+              "label": "contractOwner",
+              "type": "t_address_payable",
+              "src": "contracts/Charity.sol:10"
+            },
+            {
+              "contract": "Charity",
+              "label": "donators",
+              "type": "t_array(t_address)dyn_storage",
+              "src": "contracts/Charity.sol:11"
+            },
+            {
+              "contract": "Charity",
+              "label": "donatorAmounts",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts/Charity.sol:13"
+            },
+            {
+              "contract": "Charity",
+              "label": "donatorIDs",
+              "type": "t_mapping(t_address,t_uint256)",
+              "src": "contracts/Charity.sol:14"
+            },
+            {
+              "contract": "Charity",
+              "label": "donator_id",
+              "type": "t_uint256",
+              "src": "contracts/Charity.sol:20"
+            }
+          ],
+          "types": {
+            "t_address_payable": {
+              "label": "address payable"
+            },
+            "t_array(t_address)dyn_storage": {
+              "label": "address[]"
+            },
+            "t_address": {
+              "label": "address"
+            },
+            "t_mapping(t_address,t_uint256)": {
+              "label": "mapping(address => uint256)"
+            },
+            "t_uint256": {
+              "label": "uint256"
+            }
+          },
+          "layoutVersion": "1.1"
+        }
+      },
+      "console": {
+        "src": "hardhat/console.sol:4",
+        "version": {
+          "withMetadata": "beae05454d6c24b0af2926d3f12cbd62c3db4a4f7dff423bd7ff2ddbe2972f20",
+          "withoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff",
+          "linkedWithoutMetadata": "08d24783a787f8a51dea0c166bb6f91a4f0865e02d03d749f102d332e6ead0ff"
+        },
+        "inherit": [],
+        "libraries": [],
+        "methods": [],
+        "linkReferences": [],
+        "errors": [],
+        "layout": {
+          "storage": [],
+          "types": {},
+          "layoutVersion": "1.1"
+        }
+      }
+    }
+  ]
+}
