@@ -2,7 +2,6 @@
 
 ## Charity smart-contract
 
-
 The contract receives donations and allows the owner to withdraw funds to a particular address. 
 
 Deployed to [Ropsten](https://faucet.ropsten.be). 
